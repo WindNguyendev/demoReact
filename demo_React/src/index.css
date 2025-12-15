@@ -1,68 +1,113 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.todo-container {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Title */
+.todo-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-body {
-  margin: 0;
+/* Input + Button */
+.todo-input {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center; /* ✅ căn giữa */
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
+.todo-input input {
+  width: 240px;
+  padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 1px solid #d1d5db;
+  outline: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.todo-input input:focus {
+  border-color: #1677ff;
+}
+
+.todo-input button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #1677ff;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-input button:hover {
+  background: #0958d9;
+}
+
+/* Todo item */
+.todo-container > div:last-child > div {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+
+/* List container */
+.todo-list {
+  margin-top: 20px;
+  padding-top: 16px;
+
+  max-width: 360px;     /* ✅ thu nhỏ */
+  margin-left: auto;    /* ✅ căn giữa */
+  margin-right: auto;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Item */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+  margin-bottom: 8px;
+
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+/* Wrapper căn giữa */
+.todo-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Logo React */
+.react-logo {
+  width: 120px;          /* ✅ to ra */
+  height: 120px;
+  opacity: 0.85;
+
+  animation: spin 12s linear infinite; /* ✅ quay tròn */
+}
+
+/* Animation quay */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+    transform: rotate(360deg);
   }
 }
+
